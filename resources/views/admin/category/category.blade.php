@@ -16,7 +16,7 @@
                     </div>
                     @endif
                     <div class="card bg-white rounded">
-                        <div class="card-header bg-primary text-white">
+                        <div class="card-header bg-warning text-white">
                             Added List
                         </div>
                         <div class="card-body">
@@ -26,7 +26,6 @@
                                         <tr>
                                             <th scope="col">Id</th>
                                             <th scope="col">Category Name</th>
-                                            <th scope="col">User Id</th>
                                             <th scope="col">Created At</th>
                                             <th scope="col">Action</th>
                                         </tr>
@@ -37,7 +36,6 @@
                                         <tr>
                                             <th scope="row">{{ $categories->firstItem() + $loop->index }}</th>
                                             <td>{{ $category->category_name }}</td>
-                                            <td>{{ $category->user_id }}</td>
                                             <td>{{ $category->created_at->diffForHumans() }}</td>
                                             <td>
                                                 <a href="{{ url('category/edit/'.$category->id) }}"
@@ -61,7 +59,7 @@
                     <div class="card bg-white rounded">
                         <form action="{{ route('add.category') }}" method="POST">
                             @csrf
-                            <div class="card-header bg-success text-white">
+                            <div class="card-header bg-info text-white">
                                 Add Category
                             </div>
                             <div class="card-body">
@@ -73,17 +71,16 @@
                                     @enderror
                                 </div>
 
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <!-- List of Deleted Items -->
             <div class="col-md-8 mt-4">
                 <div class="card bg-white rounded">
-                    <div class="card-header bg-danger text-white">
+                    <div class="card-header bg-dark text-white">
                         Deleted List
                     </div>
                     <div class="card-body">
@@ -93,7 +90,6 @@
                                     <tr>
                                         <th scope="col">Id</th>
                                         <th scope="col">Category Name</th>
-                                        <th scope="col">User Id</th>
                                         <th scope="col">Deleted At</th>
                                         <th scope="col">Action</th>
                                     </tr>
@@ -104,7 +100,6 @@
                                     <tr>
                                         <th scope="row">{{ $trashCat->firstItem() + $loop->index }}</th>
                                         <td>{{ $trash->category_name }}</td>
-                                        <td>{{ $trash->user_id }}</td>
                                         <td>{{ $trash->deleted_at->diffForHumans() }}</td>
                                         <td>
                                             <a href="{{ url('category/restore/'.$trash->id) }}"

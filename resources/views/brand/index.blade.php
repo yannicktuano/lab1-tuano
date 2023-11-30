@@ -17,7 +17,7 @@
                     @endif
 
                     <div class="card bg-white rounded">
-                        <div class="card-header bg-primary text-white">
+                        <div class="card-header bg-warning text-white">
                             All Brands
                         </div>
                         <div class="card-body">
@@ -61,7 +61,7 @@
 
                 <div class="col-md-4">
                     <div class="card bg-white rounded">
-                        <div class="card-header bg-success text-white">
+                        <div class="card-header bg-info text-white">
                             Add Brands
                         </div>
                         <div class="card-body">
@@ -81,17 +81,16 @@
                                     <span class="text-danger">{{ $message }}</span>
                                     @enderror
                                 </div>
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-success">Submit</button>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- List of Deleted Items -->
             <div class="col-md-8 mt-4">
                 <div class="card bg-white rounded">
-                    <div class="card-header bg-danger text-white">
+                    <div class="card-header bg-dark text-white">
                         Deleted List
                     </div>
                     <div class="card-body">
